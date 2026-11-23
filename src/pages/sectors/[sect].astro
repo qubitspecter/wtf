@@ -1,0 +1,14 @@
+---
+import Page from "../../layouts/Page.astro";
+import { sectors } from "../../data/site";
+
+export function getStaticPaths() {
+    return sectors.map((i) => ({
+        params: { sect: i.sect },
+        props: { name: i.name },
+    }));
+}
+const { name } = Astro.props;
+---
+
+<Page eyebrow="Sectors" title={name} />
