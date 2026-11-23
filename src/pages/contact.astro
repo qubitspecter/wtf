@@ -1,0 +1,21 @@
+---
+import Page from '../layouts/Page.astro';
+import { lorem } from '../data/site';
+---
+<Page eyebrow="Get in touch" title="Contact" cta={false}>
+  <section>
+    <div class="wrap two-col">
+      <div>
+        <p>{lorem.short}</p>
+        <p>{lorem.long}</p>
+      </div>
+      {/* TODO: point this form at your real handler (Formspree, a PHP script, Power Automate, etc.) */}
+      <form onsubmit="return false">
+        <label>Name<input name="name" autocomplete="name" /></label>
+        <label>Email<input type="email" name="email" autocomplete="email" /></label>
+        <label>Message<textarea name="message" rows="5"></textarea></label>
+        <div><button class="btn btn--plain">Send</button></div>
+      </form>
+    </div>
+  </section>
+</Page>

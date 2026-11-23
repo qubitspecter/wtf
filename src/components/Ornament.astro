@@ -1,0 +1,5 @@
+---
+interface Props { center?: boolean }
+const { center = false } = Astro.props;
+---
+<div class:list={['ornament', { 'ornament--center': center }]}><i></i></div>

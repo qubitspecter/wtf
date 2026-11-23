@@ -1,0 +1,13 @@
+---
+import Ornament from './Ornament.astro';
+import { lorem } from '../data/site';
+---
+<section class="cta">
+  <div class="fan"></div>
+  <div class="wrap">
+    <Ornament center />
+    <h2>Lorem ipsum dolor sit amet</h2>
+    <p class="lede">{lorem.short}</p>
+    <a class="btn" href="/contact/">Start a conversation</a>
+  </div>
+</section>

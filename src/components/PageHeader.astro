@@ -1,0 +1,16 @@
+---
+import Ornament from './Ornament.astro';
+import { lorem } from '../data/site';
+
+interface Props { eyebrow: string; title: string; lede?: string }
+const { eyebrow, title, lede = lorem.short } = Astro.props;
+---
+<div class="page-hero step-edge">
+  <div class="fan"></div>
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <Ornament />
+    <h1>{title}</h1>
+    <p class="lede">{lede}</p>
+  </div>
+</div>

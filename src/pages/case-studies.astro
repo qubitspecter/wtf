@@ -1,0 +1,21 @@
+---
+import Page from '../layouts/Page.astro';
+import { lorem } from '../data/site';
+const cases = [1, 2, 3];
+---
+<Page eyebrow="Our work" title="Case Studies">
+  <section>
+    <div class="wrap">
+      <div class="grid">
+        {cases.map((n) => (
+          <article>
+            <div class="placeholder-img"></div>
+            <p class="eyebrow">Industry {n}</p>
+            <h3>Lorem ipsum case {n}</h3>
+            <p class="muted">{lorem.short}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Page>

@@ -1,0 +1,23 @@
+---
+import { nav, industries } from '../data/site';
+const explore = nav.filter((i) => !i.children);
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="brand"><img src="/img/logo-dark.png" alt="" width="78" height="36" />DECOHERON</div>
+        <p class="footer-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        {explore.map((i) => <a href={i.href}>{i.label}</a>)}
+      </div>
+      <div>
+        <h3>Industries</h3>
+        {industries.map((i) => <a href={`/industries/${i.slug}/`}>{i.name}</a>)}
+      </div>
+    </div>
+    <p class="footer-note">© {new Date().getFullYear()} Decoheron. Lorem ipsum dolor sit amet.</p>
+  </div>
+</footer>

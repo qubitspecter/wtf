@@ -1,0 +1,15 @@
+---
+// Standard inner page: header band, body (default placeholder body, or your own via the slot), call to action.
+import Base from './Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PageBody from '../components/PageBody.astro';
+import Cta from '../components/Cta.astro';
+
+interface Props { title: string; eyebrow: string; cta?: boolean }
+const { title, eyebrow, cta = true } = Astro.props;
+---
+<Base title={title}>
+  <PageHeader eyebrow={eyebrow} title={title} />
+  <slot><PageBody /></slot>
+  {cta && <Cta />}
+</Base>

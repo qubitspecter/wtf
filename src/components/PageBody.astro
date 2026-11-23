@@ -1,0 +1,26 @@
+---
+import Card from './Card.astro';
+import { lorem } from '../data/site';
+---
+<section>
+  <div class="wrap two-col">
+    <div>
+      <h2>Lorem ipsum dolor</h2>
+      <p>{lorem.short}</p>
+      <p>{lorem.long}</p>
+    </div>
+    <div>
+      <p>{lorem.long}</p>
+      <p>{lorem.short}</p>
+    </div>
+  </div>
+</section>
+<section class="section-alt">
+  <div class="wrap">
+    <div class="grid">
+      <Card no="I" title="Lorem ipsum">{lorem.short}</Card>
+      <Card no="II" title="Dolor sit amet">{lorem.short}</Card>
+      <Card no="III" title="Consectetur">{lorem.short}</Card>
+    </div>
+  </div>
+</section>
