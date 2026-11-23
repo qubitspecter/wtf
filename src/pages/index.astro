@@ -1,75 +1,96 @@
 ---
-import Base from '../layouts/Base.astro';
-import Ornament from '../components/Ornament.astro';
-import Card from '../components/Card.astro';
-import Cta from '../components/Cta.astro';
-import { lorem, industries } from '../data/site';
+import Base from "../layouts/Base.astro";
+import Ornament from "../components/Ornament.astro";
+import Card from "../components/Card.astro";
+import Cta from "../components/Cta.astro";
+import { lorem, sectors } from "../data/site";
 ---
+
 <Base>
-  <div class="hero step-edge">
-    <div class="fan"></div>
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Security uplift in a box</p>
-        <Ornament />
-        <h1>Lorem ipsum dolor sit amet, certainty.</h1>
-        <p class="lede">{lorem.short}</p>
-        <p class="actions">
-          <a class="btn" href="/veristate/">See VeriState</a>
-          <a class="link-arrow" href="/approach/">Our approach &rarr;</a>
-        </p>
-      </div>
+    <div class="hero step-edge">
+        <div class="fan"></div>
+        <div class="wrap">
+            <div>
+                <p class="eyebrow">Security uplift in a box</p>
+                <Ornament />
+                <h1>Lorem ipsum dolor sit amet, certainty.</h1>
+                <p class="lede">{lorem.short}</p>
+                <p class="actions">
+                    <a class="btn" href="/veristate/">
+                        See VeriState
+                    </a>
+                    <a class="link-arrow" href="/approach/">
+                        Our approach &rarr;
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <section>
-    <div class="wrap">
-      <p class="eyebrow">What you get</p>
-      <h2>Deterministic controls, proven daily</h2>
-      <p class="lede lede--spaced">{lorem.short}</p>
-      <div class="grid">
-        <Card no="I" title="Deterministic controls">{lorem.short}</Card>
-        <Card no="II" title="Uplift in a box">{lorem.short}</Card>
-        <Card no="III" title="VeriState attestation">{lorem.short}</Card>
-      </div>
-    </div>
-  </section>
+    <section>
+        <div class="wrap">
+            <p class="eyebrow">What you get</p>
+            <h2>Deterministic controls, proven daily</h2>
+            <p class="lede lede--spaced">{lorem.short}</p>
+            <div class="grid">
+                <Card no="I" title="Deterministic controls">
+                    {lorem.short}
+                </Card>
+                <Card no="II" title="Uplift in a box">
+                    {lorem.short}
+                </Card>
+                <Card no="III" title="VeriState attestation">
+                    {lorem.short}
+                </Card>
+            </div>
+        </div>
+    </section>
 
-  <section class="section-alt">
-    <div class="wrap two-col">
-      <div>
-        <p class="eyebrow">Why drift matters</p>
-        <h2>From probabilistic to deterministic</h2>
-      </div>
-      <div>
-        <p>{lorem.long}</p>
-        <p>{lorem.short}</p>
-        <p><a class="btn" href="/approach/">Read the approach</a></p>
-      </div>
-    </div>
-  </section>
+    <section class="section-alt">
+        <div class="wrap two-col">
+            <div>
+                <p class="eyebrow">Why drift matters</p>
+                <h2>From probabilistic to deterministic</h2>
+            </div>
+            <div>
+                <p>{lorem.long}</p>
+                <p>{lorem.short}</p>
+                <p>
+                    <a class="btn" href="/approach/">
+                        Read the approach
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <div class="wrap">
-      <p class="eyebrow">Assurance services</p>
-      <h2>Evaluation and standards work</h2>
-      <p class="lede lede--spaced">{lorem.short}</p>
-      <div class="grid grid--wide">
-        <Card no="ISO 15408" title="Common Criteria preparation">{lorem.short}</Card>
-        <Card no="IEC 62443" title="Industrial security review">{lorem.short}</Card>
-      </div>
-    </div>
-  </section>
+    <section>
+        <div class="wrap">
+            <p class="eyebrow">Assurance services</p>
+            <h2>Evaluation and standards work</h2>
+            <p class="lede lede--spaced">{lorem.short}</p>
+            <div class="grid grid--wide">
+                <Card no="ISO 15408" title="Common Criteria preparation">
+                    {lorem.short}
+                </Card>
+                <Card no="IEC 62443" title="Industrial security review">
+                    {lorem.short}
+                </Card>
+            </div>
+        </div>
+    </section>
 
-  <section class="section-alt">
-    <div class="wrap">
-      <p class="eyebrow">Industries</p>
-      <h2>Lorem ipsum dolor sit amet</h2>
-      <div class="chips">
-        {industries.map((i) => <a href={`/industries/${i.slug}/`}>{i.name}</a>)}
-      </div>
-    </div>
-  </section>
+    <section class="section-alt">
+        <div class="wrap">
+            <p class="eyebrow">Industries</p>
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <div class="chips">
+                {sectors.map((i) => (
+                    <a href={`/industries/${i.sect}/`}>{i.name}</a>
+                ))}
+            </div>
+        </div>
+    </section>
 
-  <Cta />
+    <Cta />
 </Base>

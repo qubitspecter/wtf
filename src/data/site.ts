@@ -9,20 +9,27 @@ export interface NavLink { label: string; href: string }
 export interface NavItem { label: string; href?: string; children?: NavLink[] }
 
 // Add an industry here and it gets a page, a menu entry, a footer link and a home page chip.
-export const industries = [
-  { slug: 'wealth-management', name: 'Wealth Management' },
-  { slug: 'legal', name: 'Legal' },
-  { slug: 'accounting', name: 'Accounting' },
-  { slug: 'cyber-security', name: 'Cyber Security' },
-  { slug: 'operational-technology', name: 'Operational Technology' },
-  { slug: 'msps', name: 'MSPs' },
+export const sectors = [
+  { sect: 'wealth-management', name: 'Wealth Management' },
+  { sect: 'legal', name: 'Legal' },
+  { sect: 'accounting', name: 'Accounting' },
+  { sect: 'cyber-security', name: 'Cyber Security' },
+  { sect: 'operational-technology', name: 'Operational Technology' },
+  { sect: 'msps', name: 'MSPs' },
+  { sect: 'case-studies', name: 'Case Studies'}
+];
+
+// Add an industry here and it gets a page, a menu entry, a footer link and a home page chip.
+export const services = [
+  { sect: 'vciso', name: 'Virtual CISO' },
+  { sect: 'tech-advice', name: 'Technical Advisory' }
 ];
 
 export const nav: NavItem[] = [
-  { label: 'Product', href: '/veristate/' },
-  { label: 'Approach', href: '/approach/' },
-  { label: 'Industries', children: industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}/` })) },
-  { label: 'Case Studies', href: '/case-studies/' },
+  { label: 'VeriState', href: '/veristate/' },
+  { label: 'Services', children: services.map((i) => ({ label: i.name, href: `/services/${i.sect}/` })) },
+  { label: 'Sectors', children: sectors.map((i) => ({ label: i.name, href: `/sectors/${i.sect}/` })) },
+  { label: 'WTF?', href: '/case-studies/' },
   { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: 'Get Started', href: '/contact/' },
 ];
